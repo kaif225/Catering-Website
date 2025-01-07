@@ -1,19 +1,5 @@
 {
   "version": 2,
-  "routes": [
-    {
-      "src": "/robots.txt",
-      "dest": "/robots.txt"
-    },
-    {
-      "src": "/sitemap.xml",
-      "dest": "/sitemap.xml"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -51,6 +37,19 @@
       ]
     }
   ],
+  "rewrites": [
+    { 
+      "source": "/:path*",
+      "destination": "/index.html"
+    }
+  ],
   "cleanUrls": true,
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/:path",
+      "destination": "/:path/",
+      "permanent": true
+    }
+  ]
 }
