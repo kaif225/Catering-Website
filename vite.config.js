@@ -18,20 +18,21 @@ export default defineConfig({
           '/checkout/'
         ];
 
-        // Ensure the output directory exists
+        // Get the output directory
         const outputDir = path.resolve(__dirname, 'dist');
-        if (!fs.existsSync(outputDir)) {
-          fs.mkdirSync(outputDir, { recursive: true });
-        }
 
-        // Copy index.html for each route
-        const indexContent = fs.readFileSync(path.join(outputDir, 'index.html'), 'utf-8');
+        // Create directories for each route
         routes.forEach(route => {
-          const routePath = path.join(outputDir, route === '/' ? '' : route);
+          if (route === '/') return; // Skip root path
+          const routePath = path.join(outputDir, route);
           if (!fs.existsSync(routePath)) {
             fs.mkdirSync(routePath, { recursive: true });
           }
-          fs.writeFileSync(path.join(routePath, 'index.html'), indexContent);
+          // Copy index.html to each route directory
+          fs.copyFileSync(
+            path.join(outputDir, 'index.html'),
+            path.join(routePath, 'index.html')
+          );
         });
       }
     }
@@ -46,9 +47,7 @@ export default defineConfig({
         }
       }
     },
-    // Enable source maps for better debugging
     sourcemap: true,
-    // Minify output
     minify: 'terser',
     terserOptions: {
       compress: {

@@ -16,39 +16,42 @@ const routes = [
 
 async function createStaticFiles() {
   try {
+    const distPath = path.join(__dirname, 'dist');
+    const indexPath = path.join(distPath, 'index.html');
+
+    // Check if dist directory exists
+    if (!fs.existsSync(distPath)) {
+      console.error('Dist directory not found. Please run build first.');
+      process.exit(1);
+    }
+
+    // Check if index.html exists
+    if (!fs.existsSync(indexPath)) {
+      console.error('index.html not found in dist directory.');
+      process.exit(1);
+    }
+
     // Read the index.html template
-    const template = fs.readFileSync(path.join(__dirname, 'dist/index.html'), 'utf-8');
+    const template = fs.readFileSync(indexPath, 'utf-8');
 
     // Create static files for each route
-    routes.forEach(route => {
-      const dirPath = route 
-        ? path.join(__dirname, 'dist', route)
-        : path.join(__dirname, 'dist');
-
+    for (const route of routes) {
+      const routePath = path.join(distPath, route);
+      
       // Create directory if it doesn't exist
-      if (!fs.existsSync(dirPath)) {
-        fs.mkdirSync(dirPath, { recursive: true });
+      if (route !== '') {
+        fs.mkdirSync(routePath, { recursive: true });
       }
 
-      // Write index.html to each directory
-      const filePath = path.join(dirPath, 'index.html');
-      fs.writeFileSync(filePath, template);
-      console.log(`Created static file for route: /${route}`);
-    });
+      // Write index.html for this route
+      const targetPath = path.join(routePath, 'index.html');
+      fs.writeFileSync(targetPath, template);
+      console.log(`Created: ${targetPath}`);
+    }
 
-    // Copy robots.txt and sitemap.xml
-    ['robots.txt', 'sitemap.xml'].forEach(file => {
-      const srcPath = path.join(__dirname, 'public', file);
-      const destPath = path.join(__dirname, 'dist', file);
-      if (fs.existsSync(srcPath)) {
-        fs.copyFileSync(srcPath, destPath);
-        console.log(`Copied ${file} to dist`);
-      }
-    });
-
-    console.log('Static file generation complete!');
+    console.log('Static files generated successfully!');
   } catch (error) {
-    console.error('Error generating static files:', error);
+    console.error('Error creating static files:', error);
     process.exit(1);
   }
 }
