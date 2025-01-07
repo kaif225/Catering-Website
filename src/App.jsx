@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
-import CateringHeroSection from './pages/Herosection';
+import CateringHeroSection from './pages/Herosection.jsx';
 import LuxuryServices from './pages/LuxuryServices';
 import Footer from './components/Footer';
 import Event from './pages/Event';
