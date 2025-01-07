@@ -1,8 +1,10 @@
-# Allow all crawlers
+# Allow specific sections for indexing
 User-agent: *
+Allow: /event-planning-services/
+Allow: /about-rukn-al-dyafa/
+Allow: /luxury-hospitality-services/
+Allow: /hospitality-services-memories/
 Allow: /
-Disallow: /api/
-Disallow: /admin/
 
-# Sitemap location
-Sitemap: https://ruknaldyafa.ae/sitemap.xml
+# Provide the sitemap link to help crawlers navigate
+Sitemap: https://www.ruknaldyafa.ae/sitemap.xml

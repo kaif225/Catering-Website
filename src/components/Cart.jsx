@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
 
-
 const hotBeverages = [
   "Arabic coffee | قهوة عربية",
   "Turkish coffee | قهوة تركية",
@@ -73,8 +72,10 @@ const translations = {
     guests: "Number of Guests",
     eventDate: "Event Date",
     thankYouTitle: "🎉 Thank You!",
-    thankYouMessage: "Your order has been successfully submitted. We will reach out to you shortly.",
-    specialOffer: "Special Offer: Order Package 3 or higher and get a complimentary Beverage or Perfume with your order.",
+    thankYouMessage:
+      "Your order has been successfully submitted. We will reach out to you shortly.",
+    specialOffer:
+      "Special Offer: Order Package 3 or higher and get a complimentary Beverage or Perfume with your order.",
     order: "Order Now",
   },
   arabic: {
@@ -98,13 +99,13 @@ const translations = {
     eventDate: "تاريخ الحدث",
     thankYouTitle: "🎉 شكراً!",
     thankYouMessage: "تم إرسال طلبك بنجاح. سنصل إليك قريبًا.",
-    specialOffer: "عرض خاص: اطلب حزمة 3 أو أكثر واحصل على مشروب أو عطر مجاني مع طلبك.",
+    specialOffer:
+      "عرض خاص: اطلب حزمة 3 أو أكثر واحصل على مشروب أو عطر مجاني مع طلبك.",
     order: "اطلب الآن",
   },
 };
 
-
-const Cart = ({ selectedPackage, selectedPackagePrice , language }) => {
+const Cart = ({ selectedPackage, selectedPackagePrice, language }) => {
   const location = useLocation();
   const formData = location.state?.formData || {};
   const [selectedDrinks, setSelectedDrinks] = useState([]);
@@ -114,27 +115,29 @@ const Cart = ({ selectedPackage, selectedPackagePrice , language }) => {
 
   const DELIVERY_CHARGES = {
     "Abu Dhabi": 300,
-    "Ajman": 0,
+    Ajman: 0,
     "Al Ain": 400,
-    "Dubai": 0,
-    "Fujairah": 300,
+    Dubai: 0,
+    Fujairah: 300,
     "Ras Al Khaimah": 300,
-    "Sharjah": 0,
+    Sharjah: 0,
     "Umm Al Quwain": 0,
   };
 
   const handleDrinkSelection = (drinkType, drinkName) => {
-    if (!drinkName || selectedDrinks.some((drink) => drink.name === drinkName)) return;
-  
+    if (!drinkName || selectedDrinks.some((drink) => drink.name === drinkName))
+      return;
+
     setSelectedDrinks((prevDrinks) => [
       ...prevDrinks,
       { type: drinkType, name: drinkName, price: DRINK_PRICE },
     ]);
   };
-  
+
   const handleFoodSelection = (foodName) => {
     const foodItem = foodItems.find((item) => item.name === foodName);
-    if (!foodItem || selectedFoodItems.some((food) => food.name === foodName)) return;
+    if (!foodItem || selectedFoodItems.some((food) => food.name === foodName))
+      return;
 
     setSelectedFoodItems((prevFood) => [...prevFood, foodItem]);
   };
@@ -150,21 +153,29 @@ const Cart = ({ selectedPackage, selectedPackagePrice , language }) => {
       prevFood.filter((_, index) => index !== indexToRemove)
     );
   };
- 
-    // Dynamically get the translation for the current language
-    const t = translations[language] || translations.english;
+
+  // Dynamically get the translation for the current language
+  const t = translations[language] || translations.english;
 
   const calculateTotal = () => {
-    const drinksTotal = selectedDrinks.reduce((sum, drink) => sum + drink.price, 0);
-    const foodTotal = selectedFoodItems.reduce((sum, food) => sum + food.price, 0);
+    const drinksTotal = selectedDrinks.reduce(
+      (sum, drink) => sum + drink.price,
+      0
+    );
+    const foodTotal = selectedFoodItems.reduce(
+      (sum, food) => sum + food.price,
+      0
+    );
     const deliveryCharge = DELIVERY_CHARGES[formData.city] || 0;
-    return (selectedPackagePrice || 0) + drinksTotal + foodTotal + deliveryCharge;
+    return (
+      (selectedPackagePrice || 0) + drinksTotal + foodTotal + deliveryCharge
+    );
   };
 
   const handleOrderSubmit = () => {
     setShowThankYouPopup(true);
-      const totalAmount = calculateTotal();
-      const message = `
+    const totalAmount = calculateTotal();
+    const message = `
     Hello, I would like to place an order. Here are the details:
     
     *Selected Package:* 
@@ -172,16 +183,26 @@ const Cart = ({ selectedPackage, selectedPackagePrice , language }) => {
     - Package Price: ${selectedPackagePrice || 0} AED
 
     *Selected Food Items:*
-    ${selectedFoodItems.map((food, index) => `- ${food.name} (${food.price} AED)`).join("\n")}
+    ${selectedFoodItems
+      .map((food, index) => `- ${food.name} (${food.price} AED)`)
+      .join("\n")}
     
     *Selected Drinks:*
-    ${selectedDrinks.map((drink, index) => `- ${drink.type}: ${drink.name} (${drink.price} AED)`).join("\n")}   
+    ${selectedDrinks
+      .map(
+        (drink, index) => `- ${drink.type}: ${drink.name} (${drink.price} AED)`
+      )
+      .join("\n")}   
     
     *Client Information:*
     - Name: ${formData.name || "N/A"}
     - Email: ${formData.email || "N/A"}
     - City: ${formData.city || "N/A"}
-    - Phone: ${formData.countryCode ? `${formData.countryCode} ${formData.phone}` : formData.phone || "N/A"}
+    - Phone: ${
+      formData.countryCode
+        ? `${formData.countryCode} ${formData.phone}`
+        : formData.phone || "N/A"
+    }
     - Guests: ${formData.guests || "N/A"}
     - Event Date: ${formData.eventDate || "N/A"}
 
@@ -189,69 +210,82 @@ const Cart = ({ selectedPackage, selectedPackagePrice , language }) => {
     
     *Total Amount:* ${totalAmount} AED
       `.trim();
-    
-      // Encode the message for use in a URL
-      const encodedMessage = encodeURIComponent(message);
-    
-      // WhatsApp API link
-      const whatsappLink = `https://wa.me/+917045992776?text=${encodedMessage}`;
-    
-      // Redirect to WhatsApp
-      window.open(whatsappLink, "_blank");
+
+    // Encode the message for use in a URL
+    const encodedMessage = encodeURIComponent(message);
+
+    // WhatsApp API link
+    const whatsappLink = `https://wa.me/+917045992776?text=${encodedMessage}`;
+
+    // Redirect to WhatsApp
+    window.open(whatsappLink, "_blank");
   };
-  
+
   return (
-    <div className="min-h-screen bg-gray-100 p-4 flex items-center justify-center" id="cart">
-    
+    <div
+      className="min-h-screen bg-gray-100 p-4 flex items-center justify-center"
+      id="cart"
+    >
       <div className="hidden md:block h-full w-full p-8">
-      <img 
-        src="https://i.pinimg.com/736x/36/db/a0/36dba0a1d51aab032bb4855f8075b8c3.jpg" 
-        alt="Package Image" 
-        className="object-cover max-h-full w-full rounded-xl"/>
+        <img
+          src="https://i.pinimg.com/736x/36/db/a0/36dba0a1d51aab032bb4855f8075b8c3.jpg"
+          alt="Package Image"
+          className="object-cover max-h-full w-full rounded-xl"
+        />
       </div>
       <div className="max-w-6xl w-full bg-gray-50 rounded-lg py-8 px-3 md:p-8">
         <h1 className="text-2xl font-bold text-center">{t.header}</h1>
 
         {/* Drink Selection */}
-      <div className="flex justify-between items-center my-6">
-        <div className="w-1/2 mr-4">
-          <label htmlFor="hotDrink" className="block text-sm font-medium mb-2">
-            {t.HotDrink}
-          </label>
-          <select
-            id="hotDrink"
-            onChange={(e) => handleDrinkSelection("Hot Drink", e.target.value)}
-            className="border border-gray-300 rounded-md px-3 py-2 w-full"
-          >
-            <option value="">-- Select --</option>
-            {hotBeverages.map((drink) => (
-              <option key={drink} value={drink}>
-                {drink}
-              </option>
-            ))}
-          </select>
+        <div className="flex justify-between items-center my-6">
+          <div className="w-1/2 mr-4">
+            <label
+              htmlFor="hotDrink"
+              className="block text-sm font-medium mb-2"
+            >
+              {t.HotDrink}
+            </label>
+            <select
+              id="hotDrink"
+              onChange={(e) =>
+                handleDrinkSelection("Hot Drink", e.target.value)
+              }
+              className="border border-gray-300 rounded-md px-3 py-2 w-full"
+            >
+              <option value="">-- Select --</option>
+              {hotBeverages.map((drink) => (
+                <option key={drink} value={drink}>
+                  {drink}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="w-1/2">
+            <label
+              htmlFor="coldDrink"
+              className="block text-sm font-medium mb-2"
+            >
+              {t.ColdDrink}
+            </label>
+            <select
+              id="coldDrink"
+              onChange={(e) =>
+                handleDrinkSelection("Cold Drink", e.target.value)
+              }
+              className="border border-gray-300 rounded-md px-3 py-2 w-full"
+            >
+              <option value="">-- Select --</option>
+              {coldBeverages.map((drink) => (
+                <option key={drink} value={drink}>
+                  {drink}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
-        <div className="w-1/2">
-          <label htmlFor="coldDrink" className="block text-sm font-medium mb-2">
-          {t.ColdDrink}
-          </label>
-          <select
-            id="coldDrink"
-            onChange={(e) => handleDrinkSelection("Cold Drink", e.target.value)}
-            className="border border-gray-300 rounded-md px-3 py-2 w-full"
-          >
-            <option value="">-- Select --</option>
-            {coldBeverages.map((drink) => (
-              <option key={drink} value={drink}>
-                {drink}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
 
-       {/* Food Section */}
-       <div className="mb-6">
+        {/* Food Section */}
+        <div className="mb-6">
           <h2 className="text-md font-semibold mb-2">{t.fooditem}</h2>
           <select
             onChange={(e) => handleFoodSelection(e.target.value)}
@@ -265,9 +299,8 @@ const Cart = ({ selectedPackage, selectedPackagePrice , language }) => {
             ))}
           </select>
         </div>
-        
-      
-                {/* Selected Package Details */}
+
+        {/* Selected Package Details */}
         <div className="border rounded-lg p-4 my-6 bg-gray-50">
           <h2 className="text-xl font-semibold mb-4">{t.select}</h2>
 
@@ -290,9 +323,14 @@ const Cart = ({ selectedPackage, selectedPackagePrice , language }) => {
             <div className="mb-4">
               <h3 className="font-semibold mb-2">{t.drinks}:</h3>
               {selectedDrinks.map((drink, index) => (
-                <div key={index} className="flex justify-between items-center border-b pb-2">
+                <div
+                  key={index}
+                  className="flex justify-between items-center border-b pb-2"
+                >
                   <div>
-                    <span>{drink.type}: {drink.name}</span>
+                    <span>
+                      {drink.type}: {drink.name}
+                    </span>
                   </div>
                   <div className="flex items-center">
                     <span>{drink.price} AED</span>
@@ -313,7 +351,10 @@ const Cart = ({ selectedPackage, selectedPackagePrice , language }) => {
             <div className="mb-4">
               <h3 className="font-semibold mb-2">{t.selectedfood}:</h3>
               {selectedFoodItems.map((food, index) => (
-                <div key={index} className="flex justify-between items-center border-b pb-2">
+                <div
+                  key={index}
+                  className="flex justify-between items-center border-b pb-2"
+                >
                   <div>{food.name}</div>
                   <div className="flex items-center">
                     <span>{food.price} AED</span>
@@ -330,20 +371,21 @@ const Cart = ({ selectedPackage, selectedPackagePrice , language }) => {
           )}
         </div>
 
-        
         {/* Delivery Charges */}
         <div className="flex justify-between mt-4 text-lg">
           <span>{t.Charges}:</span>
           <span>
-            {DELIVERY_CHARGES[formData.city] === 0 ? "Free" : `${DELIVERY_CHARGES[formData.city]} AED`}
+            {DELIVERY_CHARGES[formData.city] === 0
+              ? "Free"
+              : `${DELIVERY_CHARGES[formData.city]} AED`}
           </span>
         </div>
 
         <div className="flex justify-between mt-4 text-lg font-bold">
           <span>{t.total}:</span>
           <span>{calculateTotal()} AED</span>
-        </div>        
-        
+        </div>
+
         {/* Client Entries Section */}
         <div className="border rounded-lg p-4 my-6 bg-gray-50">
           <h2 className="text-xl font-semibold mb-4">{t.clientEntries}</h2>
@@ -352,7 +394,12 @@ const Cart = ({ selectedPackage, selectedPackagePrice , language }) => {
               { label: t.name, value: formData.name },
               { label: t.email, value: formData.email }, // No truncation
               { label: t.city, value: formData.city },
-              { label: t.phone, value: formData.countryCode ? `${formData.countryCode} ${formData.phone}` : formData.phone },
+              {
+                label: t.phone,
+                value: formData.countryCode
+                  ? `${formData.countryCode} ${formData.phone}`
+                  : formData.phone,
+              },
               { label: t.guests, value: formData.guests },
               { label: t.eventDate, value: formData.eventDate },
             ].map((item, index) => (
@@ -373,7 +420,8 @@ const Cart = ({ selectedPackage, selectedPackagePrice , language }) => {
         {/* Place Order Button */}
         <button
           className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-green-600"
-          onClick={handleOrderSubmit}>
+          onClick={handleOrderSubmit}
+        >
           {t.order}
         </button>
 
@@ -390,7 +438,7 @@ const Cart = ({ selectedPackage, selectedPackagePrice , language }) => {
                 Close
               </button>
             </div>
-          </div>  
+          </div>
         )}
       </div>
     </div>

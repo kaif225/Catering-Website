@@ -29,15 +29,15 @@ const VideoBackground = ({ language }) => {
       </video> */}
 
       {/* Responsive Background Image */}
-      <img 
-        src="https://i.pinimg.com/736x/79/c5/75/79c57564fdd38795bc76993def844bf3.jpg" 
-        alt="Background" 
-        className="absolute inset-0 w-full h-full object-cover md:hidden"  // Default (mobile) background image
+      <img
+        src="https://i.pinimg.com/736x/79/c5/75/79c57564fdd38795bc76993def844bf3.jpg"
+        alt="Background"
+        className="absolute inset-0 w-full h-full object-cover md:hidden" // Default (mobile) background image
       />
-      <img 
-        src="https://i.pinimg.com/736x/d6/db/65/d6db650f6bccb78663914369d0ca1925.jpg" 
-        alt="Responsive Background" 
-        className="absolute inset-0 w-full h-full object-cover hidden md:block"  // Desktop background image
+      <img
+        src="https://i.pinimg.com/736x/d6/db/65/d6db650f6bccb78663914369d0ca1925.jpg"
+        alt="Responsive Background"
+        className="absolute inset-0 w-full h-full object-cover hidden md:block" // Desktop background image
       />
 
       {/* Overlay */}
@@ -50,7 +50,6 @@ const VideoBackground = ({ language }) => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "easeInOut" }}
         >
-
           <motion.h3
             className="text-2xl md:text-5xl font-bold bg-gradient-to-b from-gray-100 via-gray-200 to-gray-400 text-transparent bg-clip-text"
             initial={{ y: -50, opacity: 0 }}

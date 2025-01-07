@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Plans from '../components/Plans';
-import BlogSection from '../components/BlogSection';
-import About from '../components/About';
-import VideoBackground from '../components/VideoBackground';
-import PromoBanner from '../components/PromoBanner';
+import Plans from "../components/Plans";
+import BlogSection from "../components/BlogSection";
+import About from "../components/About";
+import VideoBackground from "../components/VideoBackground";
+import PromoBanner from "../components/PromoBanner";
 import Form from "../components/ContactForm";
 import { motion } from "framer-motion";
 import { FaInstagram, FaWhatsapp, FaSnapchat } from "react-icons/fa";
@@ -48,12 +48,14 @@ const CateringHeroSection = ({ language }) => {
 
   const translations = {
     english: {
-      heading: "Flavors that tell stories, \n and hospitality that inspires moments.",
+      heading:
+        "Flavors that tell stories, \n and hospitality that inspires moments.",
       paragraph:
         "At Rukn Al Dyafa, we deliver the elegance of traditional hospitality through luxurious catering, crafting unforgettable experiences with exquisite beverages for every occasion.",
       bookNow: "Book Now",
       SideQuote: "Every season there is a set for two-tours",
-      SideDesc: "Exclusive arrangements, and immersive experiences for beverage services."
+      SideDesc:
+        "Exclusive arrangements, and immersive experiences for beverage services.",
     },
     arabic: {
       heading: "نكهات تروي القصص، \nوضيافة تلهم اللحظات.",
@@ -61,7 +63,7 @@ const CateringHeroSection = ({ language }) => {
         "في ركن الضيافة، نقدم أناقة الضيافة التقليدية من خلال خدمات الضيافة الفاخرة، ونصنع تجارب لا تُنسى مع مشروبات راقية لكل مناسبة.",
       bookNow: "احجز الآن",
       SideQuote: "في كل موسم هناك مجموعة لجولتين",
-      SideDesc: "ترتيبات حصرية وتجارب غامرة لخدمات المشروبات"
+      SideDesc: "ترتيبات حصرية وتجارب غامرة لخدمات المشروبات",
     },
   };
 
@@ -69,51 +71,76 @@ const CateringHeroSection = ({ language }) => {
 
   return (
     <div className="">
-    <Helmet>
-      <title>{language === "english" ? "Rukn Al Dyafa - Luxury Catering Services" : "ركن الضيافة - خدمات الضيافة الفاخرة"}</title>
-      <meta name="description" content={language === "english" ? 
-        "Premium catering and hospitality services in UAE. Luxury event planning, corporate catering, and exclusive hospitality solutions." : 
-        "خدمات الضيافة والتموين الفاخرة في الإمارات. تخطيط الفعاليات الفاخرة وخدمات الضيافة للشركات وحلول الضيافة الحصرية."} 
-      />
-      <meta name="keywords" content="luxury catering, event planning, hospitality services, UAE catering, corporate events, luxury hospitality" />
-      <meta property="og:title" content={language === "english" ? "Rukn Al Dyafa - Luxury Catering Services" : "ركن الضيافة - خدمات الضيافة الفاخرة"} />
-      <meta property="og:description" content={language === "english" ? 
-        "Premium catering and hospitality services in UAE" : 
-        "خدمات الضيافة والتموين الفاخرة في الإمارات"} 
-      />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://ruknaldyafa.ae" />
-      <link rel="canonical" href="https://ruknaldyafa.ae" />
-      <link data-rh="true" href="https://www.ruknaldyafa.ae/" rel="canonical"/>
-      <link rel="icon" type="image/png" href="https://i.pinimg.com/originals/46/65/46/466546a84dbb58e61e1eafc5ee4864b6.png"/>
-      <meta name="author" content="Rukn Al Dyafa Team" />
+      <Helmet>
+        <title>Rukn Al Dyafa | Hospitality service</title>
+        <meta
+          name="description"
+          content="Discover premium catering, hospitality and beverage services in the UAE. We specialize in luxurious drinks and unforgettable experiences for weddings, corporate events, and private gatherings guests."
+        />
+        <meta
+          name="keywords"
+          content="خدمات تقديم الطعام الفاخرة , تقديم المشروبات في المناسبات , شركات تقديم الطعام في الإمارات , حجز خدمات تقديم المشروبات, أفضل خدمات تقديم الطعام في الإمارات, مشروبات لحفلات الزفاف, inquire about event drink services UAE, contact beverage caterers for weddings Dubai, beverage catering Abu Dhabi for parties, event drinks setup in Sharjah, wedding beverage services in Al Ain, Dubai beverage service company for events, catering services UAE book , event drinks setup UAE online booking, beverage service for hire Dubai, beverage services near me, luxury beverages UAE, premium catering, event catering UAE"
+        />
+        <link
+          data-rh="true"
+          href="https://www.ruknaldyafa.ae/"
+          rel="canonical"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          href="https://i.pinimg.com/originals/46/65/46/466546a84dbb58e61e1eafc5ee4864b6.png"
+        />
+        <meta name="author" content="Rukn Al Dyafa Team" />
 
-    {/* Social Media Meta Tags (Open Graph) */}
-     <meta property="og:title" content="Rukn Al Dyafa - Premium Catering Services" />
-     <meta property="og:description" content="Discover luxury catering and beverage services for weddings, corporate events, and private gatherings in the UAE." />
-     <meta property="og:image" content="https://i.pinimg.com/736x/a5/dd/21/a5dd2105486983221aac5199b30a29ac.jpg" />
-     <meta property="og:url" content="https://www.ruknaldyafa.ae/" />
-     <meta property="og:type" content="website" />
+        {/* Social Media Meta Tags (Open Graph) */}
+        <meta
+          property="og:title"
+          content="Rukn Al Dyafa - Premium Catering Services"
+        />
+        <meta
+          property="og:description"
+          content="Discover luxury catering and beverage services for weddings, corporate events, and private gatherings in the UAE."
+        />
+        <meta
+          property="og:image"
+          content="https://i.pinimg.com/736x/a5/dd/21/a5dd2105486983221aac5199b30a29ac.jpg"
+        />
+        <meta property="og:url" content="https://www.ruknaldyafa.ae/" />
+        <meta property="og:type" content="website" />
 
-  {/* Twitter Card Meta Tags */}
-     <meta name="twitter:card" content="summary_large_image" />
-     {/* <meta name="twitter:site" content="@RuknAlDyafa" /> */}
-     <meta name="twitter:title" content="Rukn Al Dyafa - Premium Catering Services" />
-     <meta name="twitter:description" content="Experience luxurious catering services in the UAE. From bespoke drinks to customized experiences for any event." />
-     <meta name="twitter:image" content="https://i.pinimg.com/736x/a5/dd/21/a5dd2105486983221aac5199b30a29ac.jpg" />
-    </Helmet>
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        {/* <meta name="twitter:site" content="@RuknAlDyafa" /> */}
+        <meta
+          name="twitter:title"
+          content="Rukn Al Dyafa - Premium Catering Services"
+        />
+        <meta
+          name="twitter:description"
+          content="Experience luxurious catering services in the UAE. From bespoke drinks to customized experiences for any event."
+        />
+        <meta
+          name="twitter:image"
+          content="https://i.pinimg.com/736x/a5/dd/21/a5dd2105486983221aac5199b30a29ac.jpg"
+        />
+      </Helmet>
 
       <div className="relative bg-black h-screen px-4 sm:px-8">
-
         {/* Background Marquee for Mobile View */}
         <div className="absolute inset-0 md:hidden overflow-hidden bg-black opacity-70">
           {images.map((src, index) => (
             <div
               key={index}
-              className={`absolute inset-0 transition-opacity duration-1000 ${index === currentImage ? "opacity-100 " : "opacity-0 "}`}>
-              <img src={src}
+              className={`absolute inset-0 transition-opacity duration-1000 ${
+                index === currentImage ? "opacity-100 " : "opacity-0 "
+              }`}
+            >
+              <img
+                src={src}
                 alt="Luxury hospitality services in UAE"
-                className="w-full h-full object-cover"/>
+                className="w-full h-full object-cover"
+              />
             </div>
           ))}
         </div>
@@ -129,7 +156,6 @@ const CateringHeroSection = ({ language }) => {
 
         {/* Content */}
         <div className="relative text-left md:text-center text-white flex flex-col items-start md:items-center justify-center h-full">
-          
           {/* Animated Heading */}
           <motion.h1
             className="text-3xl sm:text-4xl md:text-5xl  font-bold leading-tight max-w-4xl"
@@ -169,16 +195,37 @@ const CateringHeroSection = ({ language }) => {
             className="flex gap-4 mb-4 md:mb-0"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}>
-            <div className="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="" data-size="">
-            <a href="https://www.instagram.com/rukn_aldyafa/" rel="noreferrer" target="_blank" className="w-10 h-10 flex justify-center items-center bg-gray-800 rounded-full hover:bg-gray-600 transition">
-              <FaInstagram />
-            </a>
+            transition={{ duration: 0.8 }}
+          >
+            <div
+              className="fb-share-button"
+              data-href="https://developers.facebook.com/docs/plugins/"
+              data-layout=""
+              data-size=""
+            >
+              <a
+                href="https://www.instagram.com/rukn_aldyafa/"
+                rel="noreferrer"
+                target="_blank"
+                className="w-10 h-10 flex justify-center items-center bg-gray-800 rounded-full hover:bg-gray-600 transition"
+              >
+                <FaInstagram />
+              </a>
             </div>
-            <a href="https://wa.me/+917045992776" target="_blank" rel="noreferrer" className="w-10 h-10 flex justify-center items-center bg-gray-800 rounded-full hover:bg-gray-600 transition">
+            <a
+              href="https://wa.me/+917045992776"
+              target="_blank"
+              rel="noreferrer"
+              className="w-10 h-10 flex justify-center items-center bg-gray-800 rounded-full hover:bg-gray-600 transition"
+            >
               <FaWhatsapp />
             </a>
-            <a href="https://www.snapchat.com/add/ruknaldyafa?sender_web_id=f7b1dbb5-c3c0-48c6-a15b-058b0e4429dc&device_type=desktop&is_copy_url=true" target="_blank" rel="noreferrer" className="w-10 h-10 flex justify-center items-center bg-gray-800 rounded-full hover:bg-gray-600 transition">
+            <a
+              href="https://www.snapchat.com/add/ruknaldyafa?sender_web_id=f7b1dbb5-c3c0-48c6-a15b-058b0e4429dc&device_type=desktop&is_copy_url=true"
+              target="_blank"
+              rel="noreferrer"
+              className="w-10 h-10 flex justify-center items-center bg-gray-800 rounded-full hover:bg-gray-600 transition"
+            >
               <FaSnapchat />
             </a>
           </motion.div>
@@ -221,7 +268,7 @@ const CateringHeroSection = ({ language }) => {
       <BlogSection language={language} />
       <FeaturedArtworks language={language} />
       {/* <Testimonial language={language} /> */}
-      <Form language={language} />      
+      <Form language={language} />
       <FAQs language={language} />
       {/* <PromoBanner language={language} /> */}
     </div>

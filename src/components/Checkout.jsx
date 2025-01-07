@@ -56,7 +56,10 @@ const Checkout = ({ language }) => {
         </div>
       </div>
 
-      <PackShowcase2 onSelectPackage={handlePackageSelection} language={language} />
+      <PackShowcase2
+        onSelectPackage={handlePackageSelection}
+        language={language}
+      />
 
       {/* Cart Section */}
       <Cart

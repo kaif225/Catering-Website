@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"; 
+import React, { useState, useEffect } from "react";
 import IMG8 from "../assets/Images/8.jpg";
 import IMG9 from "../assets/Images/9.jpg";
 import IMG16 from "../assets/Images/16.jpg";
@@ -13,11 +13,14 @@ const BlogSection = ({ language }) => {
         "Explore the world of gourmet catering, from tantalizing seasonal menus to the artistry of event presentation.",
       buttonText: "Explore All Blogs",
       blogTitle: "Luqaimat Delight",
-      blogMessage: "Experience the authentic taste of traditional Luqaimat, freshly prepared with a touch of sweetness and served with premium hospitality.",
+      blogMessage:
+        "Experience the authentic taste of traditional Luqaimat, freshly prepared with a touch of sweetness and served with premium hospitality.",
       teaTimeTitle: "Tea Time Perfection",
-      teaTimeMessage: "Savor the perfect cup of tea, expertly brewed and served to provide a comforting and delightful experience for every guest.",
+      teaTimeMessage:
+        "Savor the perfect cup of tea, expertly brewed and served to provide a comforting and delightful experience for every guest.",
       sweetTreatsTitle: "Sweet Treats Galore",
-      sweetTreatsMessage: "Indulge in a selection of exquisite sweets, crafted with care to bring joy and flavor to every moment of your event.",
+      sweetTreatsMessage:
+        "Indulge in a selection of exquisite sweets, crafted with care to bring joy and flavor to every moment of your event.",
       readTime: "5 min read", // English text for read time
     },
     arabic: {
@@ -26,11 +29,14 @@ const BlogSection = ({ language }) => {
         "استكشف عالم الضيافة الفاخرة، من قوائم الطعام الموسمية المدهشة إلى فن تقديم الفعاليات.",
       buttonText: "استكشاف جميع المدونات",
       blogTitle: "بهجة اللقيمات",
-      blogMessage: "اختبر الطعم الأصيل لللقيمات التقليدية، المحضرة طازجة مع لمسة من الحلاوة وتقدم مع ضيافة متميزة.",
+      blogMessage:
+        "اختبر الطعم الأصيل لللقيمات التقليدية، المحضرة طازجة مع لمسة من الحلاوة وتقدم مع ضيافة متميزة.",
       teaTimeTitle: "كامل الاستمتاع بالشاي",
-      teaTimeMessage: "استمتع بكوب الشاي المثالي، المحضر بحرفية ليمنح تجربة مريحة ولذيذة لجميع ضيوفك.",
+      teaTimeMessage:
+        "استمتع بكوب الشاي المثالي، المحضر بحرفية ليمنح تجربة مريحة ولذيذة لجميع ضيوفك.",
       sweetTreatsTitle: "حلويات رائعة",
-      sweetTreatsMessage: "دلل نفسك باختيار من الحلويات الرائعة، المحضرة بعناية لإضفاء الفرح والنكهة على كل لحظة في مناسبتك.",
+      sweetTreatsMessage:
+        "دلل نفسك باختيار من الحلويات الرائعة، المحضرة بعناية لإضفاء الفرح والنكهة على كل لحظة في مناسبتك.",
       readTime: "5 دقائق قراءة", // Arabic translation for read time
     },
   };
@@ -38,7 +44,7 @@ const BlogSection = ({ language }) => {
   const t = translations[language] || translations.english;
 
   useEffect(() => {
-    document.documentElement.lang = language === 'arabic' ? 'ar' : 'en';
+    document.documentElement.lang = language === "arabic" ? "ar" : "en";
   }, [language]);
 
   const blogs = [
@@ -66,7 +72,10 @@ const BlogSection = ({ language }) => {
     <div className="bg-gray-100 pb-16 px-4" id="Gallery">
       <div className="max-w-6xl mx-auto">
         {/* Title and description */}
-        <div className="text-center mb-12" dir={language === 'arabic' ? 'rtl' : 'ltr'}>
+        <div
+          className="text-center mb-12"
+          dir={language === "arabic" ? "rtl" : "ltr"}
+        >
           <h2 className="text-4xl font-bold mb-4">{t.title}</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">{t.description}</p>
           <a href="event-planning-services">

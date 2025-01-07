@@ -21,15 +21,27 @@ const LuxuryServices = ({ language = "english" }) => {
     <div>
       <Helmet>
         <title>Rukn Al Dyafa - Luxury Services & Experiences</title>
-        <meta name="description" 
-        content="Indulge in exclusive luxury catering services in the UAE. From signature drinks to gourmet treats, we create memorable dining experiences." />
-        <meta name="keywords" content="mocktail and cocktail catering UAE, beverage menu options for events UAE, book beverage catering for events UAE, coffee bar catering for events UAE, tea and coffee catering Dubai, fresh juice catering service UAE, luxury catering UAE, signature drinks UAE, premium beverage services" />
-        <link rel="canonical" href="https://www.ruknaldyafa.ae/luxury-services" />
-        <link rel="icon" type="image/png" href="https://i.pinimg.com/originals/46/65/46/466546a84dbb58e61e1eafc5ee4864b6.png"/>
+        <meta
+          name="description"
+          content="Indulge in exclusive luxury catering services in the UAE. From signature drinks to gourmet treats, we create memorable dining experiences."
+        />
+        <meta
+          name="keywords"
+          content="mocktail and cocktail catering UAE, beverage menu options for events UAE, book beverage catering for events UAE, coffee bar catering for events UAE, tea and coffee catering Dubai, fresh juice catering service UAE, luxury catering UAE, signature drinks UAE, premium beverage services"
+        />
+        <link
+          rel="canonical"
+          href="https://www.ruknaldyafa.ae/luxury-services"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          href="https://i.pinimg.com/originals/46/65/46/466546a84dbb58e61e1eafc5ee4864b6.png"
+        />
         <meta name="author" content="Rukn Al Dyafa Team" />
 
-         {/* Facebook Open Graph Tags */}
-         <meta property="og:title" content="Rukn Al Dyafa - Service" />
+        {/* Facebook Open Graph Tags */}
+        <meta property="og:title" content="Rukn Al Dyafa - Service" />
         <meta
           property="og:description"
           content="Indulge in exclusive luxury catering services in the UAE. From signature drinks to gourmet treats, we create memorable dining experiences."
@@ -38,8 +50,11 @@ const LuxuryServices = ({ language = "english" }) => {
           property="og:image"
           content="https://i.pinimg.com/736x/22/f8/4f/22f84fbacc70ee68a07f0efa9b9dca40.jpg"
         />
-        <meta property="og:url" content="https://www.ruknaldyafa.ae/luxury-services" />
-        
+        <meta
+          property="og:url"
+          content="https://www.ruknaldyafa.ae/luxury-services"
+        />
+
         {/* Twitter Cards Meta Tags */}
         <meta name="twitter:title" content="Rukn Al Dyafa - Service" />
         <meta
@@ -50,9 +65,7 @@ const LuxuryServices = ({ language = "english" }) => {
           name="twitter:image"
           content="https://i.pinimg.com/736x/22/f8/4f/22f84fbacc70ee68a07f0efa9b9dca40.jpg"
         />
-        
       </Helmet>
-
 
       {/* Hero Section */}
       <div className="relative bg-black h-[30rem] px-4 sm:px-8">

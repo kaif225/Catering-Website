@@ -144,7 +144,9 @@ function TestimonialSection({ language }) {
                   <p className="text-sm font-semibold text-gray-800">
                     {testimonial.name[language]}
                   </p>
-                  <p className="text-xs text-gray-500">{testimonial.username[language]}</p>
+                  <p className="text-xs text-gray-500">
+                    {testimonial.username[language]}
+                  </p>
                 </div>
               </div>
             </motion.div>
