@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
-import Herosection from './pages/Herosection';
+import CateringHeroSection from './pages/Herosection';
 import LuxuryServices from './pages/LuxuryServices';
 import Footer from './components/Footer';
 import Event from './pages/Event';
@@ -28,7 +28,7 @@ export default function Example() {
       <BrowserRouter>
       <Navbar language={language} toggleLanguage={toggleLanguage} mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
         <Routes>
-          <Route path="/" element={<Herosection language={language}/>} />
+          <Route path="/" element={<CateringHeroSection language={language}/>} />
           <Route path="/event-planning-services" element={<Event  language={language} />} />
           <Route path="/about-rukn-al-dyafa" element={<AboutSection language={language}/>} />
           <Route path="/luxury-hospitality-services" element={<LuxuryServices language={language} />} />
