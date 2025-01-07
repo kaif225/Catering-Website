@@ -1,10 +1,6 @@
-# Allow specific sections for indexing
+# Rukn Al Dyafa Catering Website Robots.txt
 User-agent: *
-Allow: /event-planning-services/
-Allow: /about-rukn-al-dyafa/
-Allow: /luxury-hospitality-services/
-Allow: /hospitality-services-memories/
 Allow: /
 
-# Provide the sitemap link to help crawlers navigate
+# Sitemap location
 Sitemap: https://www.ruknaldyafa.ae/sitemap.xml
