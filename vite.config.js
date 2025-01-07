@@ -8,7 +8,7 @@ export default defineConfig({
     react(),
     {
       name: 'generate-static-files',
-      writeBundle() {
+      closeBundle() {
         const routes = [
           '/',
           '/event-planning-services/',
@@ -32,7 +32,6 @@ export default defineConfig({
           if (!fs.existsSync(dirPath)) {
             fs.mkdirSync(dirPath, { recursive: true });
           }
-          
           // Copy index.html content for each route
           const indexContent = fs.readFileSync('dist/index.html', 'utf-8');
           fs.writeFileSync(filePath, indexContent);
@@ -44,16 +43,14 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     rollupOptions: {
-      input: 'index.html',
+      input: {
+        main: path.resolve(__dirname, 'index.html')
+      }
     },
-    ssrManifest: true,
-    manifest: true,
+    base: '/',
+    publicDir: 'public',
     minify: true,
-    // Generate static HTML for all routes
-    ssr: true,
   },
-  base: '/',
-  publicDir: 'public',
   server: {
     port: 3000,
     open: true,
