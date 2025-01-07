@@ -1,9 +1,0 @@
-# Specific routes
-/event-planning-services              /event-planning-services/index.html      200
-/about-rukn-al-dyafa                 /about-rukn-al-dyafa/index.html         200
-/luxury-hospitality-services         /luxury-hospitality-services/index.html  200
-/hospitality-services-memories       /hospitality-services-memories/index.html 200
-/checkout                           /checkout/index.html                      200
-
-# SPA fallback
-/*  /index.html  200

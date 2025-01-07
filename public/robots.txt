@@ -1,9 +1,0 @@
-# Allow all crawlers
-User-agent: *
-Allow: /
-
-
-
-
-# Sitemap location
-Sitemap: https://ruknaldyafa.ae/sitemap.xml
