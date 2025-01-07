@@ -5,26 +5,37 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 <url>
     <loc>https://ruknaldyafa.ae/</loc>
     <lastmod>2025-01-07T08:01:44+00:00</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
 </url>
 <url>
     <loc>https://ruknaldyafa.ae/event-planning-services/</loc>
     <lastmod>2025-01-07T08:01:44+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
 </url>
 <url>
     <loc>https://ruknaldyafa.ae/about-rukn-al-dyafa/</loc>
     <lastmod>2025-01-07T08:01:44+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
 </url>
 <url>
     <loc>https://ruknaldyafa.ae/luxury-hospitality-services/</loc>
     <lastmod>2025-01-07T08:01:44+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
 </url>
 <url>
     <loc>https://ruknaldyafa.ae/hospitality-services-memories/</loc>
     <lastmod>2025-01-07T08:01:44+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+</url>
+<url>
+    <loc>https://ruknaldyafa.ae/checkout/</loc>
+    <lastmod>2025-01-07T08:01:44+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
 </url>
 </urlset>
