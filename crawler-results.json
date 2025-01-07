@@ -1,0 +1,44 @@
+[
+  {
+    "route": "/aboutsection",
+    "title": "AboutSection",
+    "description": "",
+    "component": "AboutSection.jsx",
+    "timestamp": "2025-01-07T08:38:34.227Z"
+  },
+  {
+    "route": "/capturedmoment",
+    "title": "CapturedMoment",
+    "description": "",
+    "component": "CapturedMoment.jsx",
+    "timestamp": "2025-01-07T08:38:34.245Z"
+  },
+  {
+    "route": "/event",
+    "title": "Event",
+    "description": "",
+    "component": "Event.jsx",
+    "timestamp": "2025-01-07T08:38:34.246Z"
+  },
+  {
+    "route": "/herosection",
+    "title": "herosection",
+    "description": "",
+    "component": "herosection.jsx",
+    "timestamp": "2025-01-07T08:38:34.255Z"
+  },
+  {
+    "route": "/luxuryservices",
+    "title": "LuxuryServices",
+    "description": "",
+    "component": "LuxuryServices.jsx",
+    "timestamp": "2025-01-07T08:38:34.269Z"
+  },
+  {
+    "route": "/notfound",
+    "title": "NotFound",
+    "description": "",
+    "component": "NotFound.jsx",
+    "timestamp": "2025-01-07T08:38:34.279Z"
+  }
+]
