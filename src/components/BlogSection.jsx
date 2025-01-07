@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"; 
-import IMG8 from "../assets/Images/8.JPG";
-import IMG9 from "../assets/Images/9.JPG";
-import IMG16 from "../assets/Images/16.JPG";
+import IMG8 from "../assets/Images/8.jpg";
+import IMG9 from "../assets/Images/9.jpg";
+import IMG16 from "../assets/Images/16.jpg";
 
 const BlogSection = ({ language }) => {
   const [showPopup, setShowPopup] = useState(false);
