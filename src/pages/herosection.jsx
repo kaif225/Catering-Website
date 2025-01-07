@@ -10,13 +10,13 @@ import { FaInstagram, FaWhatsapp, FaSnapchat } from "react-icons/fa";
 import FeaturedArtworks from "../components/HeroGallery";
 import { Helmet } from "react-helmet-async";
 
-import IMG2 from "../assets/Images/2.JPG";
-import IMG51 from "../assets/Images/51.JPG";
-import IMG48 from "../assets/Images/49.JPG";
-import IMG10 from "../assets/Images/10.JPG";
+import IMG2 from "../assets/Images/2.jpg";
+import IMG51 from "../assets/Images/51.jpg";
+import IMG48 from "../assets/Images/49.jpg";
+import IMG10 from "../assets/Images/10.jpg";
 import IMG50 from "../assets/About.jpg";
 import IMG01 from "../assets/home.jpg";
-import IMG43 from "../assets/Images/43.JPG";
+import IMG43 from "../assets/Images/43.jpg";
 import FAQs from "../components/FAQs";
 
 const CateringHeroSection = ({ language }) => {
