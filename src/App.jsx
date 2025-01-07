@@ -29,11 +29,11 @@ export default function Example() {
       <Navbar language={language} toggleLanguage={toggleLanguage} mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
         <Routes>
           <Route path="/" element={<HeroSection language={language}/>} />
-          <Route path="/event-planning-services" element={<Event  language={language} />} />
-          <Route path="/about-rukn-al-dyafa" element={<AboutSection language={language}/>} />
-          <Route path="/luxury-hospitality-services" element={<LuxuryServices language={language} />} />
-          <Route path="/hospitality-services-memories" element={<CapturedMoment language={language} />} />
-          <Route path="/checkout" element={<Checkout language={language} />} />    
+          <Route path="/event-planning-services/" element={<Event  language={language} />} />
+          <Route path="/about-rukn-al-dyafa/" element={<AboutSection language={language}/>} />
+          <Route path="/luxury-hospitality-services/" element={<LuxuryServices language={language} />} />
+          <Route path="/hospitality-services-memories/" element={<CapturedMoment language={language} />} />
+          <Route path="/checkout/" element={<Checkout language={language} />} />    
           <Route path="*" element={<Custom404Page  />} />
         </Routes>
         <Footer language={language} />
