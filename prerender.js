@@ -17,25 +17,29 @@ const routes = [
 async function createStaticFiles() {
   try {
     const distPath = path.join(__dirname, 'dist');
-    const indexPath = path.join(distPath, 'index.html');
-
-    // Check if dist directory exists
+    
+    // Ensure dist directory exists
     if (!fs.existsSync(distPath)) {
-      console.error('Dist directory not found. Please run build first.');
-      process.exit(1);
+      fs.mkdirSync(distPath, { recursive: true });
     }
 
-    // Check if index.html exists
-    if (!fs.existsSync(indexPath)) {
-      console.error('index.html not found in dist directory.');
-      process.exit(1);
-    }
+    // Create index.html content with proper base path
+    const indexContent = `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rukn Al Dyafa</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.js"></script>
+  </body>
+</html>`;
 
-    // Read the index.html template
-    const template = fs.readFileSync(indexPath, 'utf-8');
-
-    // Create static files for each route
-    for (const route of routes) {
+    // Write index.html for each route
+    routes.forEach(route => {
       const routePath = path.join(distPath, route);
       
       // Create directory if it doesn't exist
@@ -43,11 +47,12 @@ async function createStaticFiles() {
         fs.mkdirSync(routePath, { recursive: true });
       }
 
-      // Write index.html for this route
-      const targetPath = path.join(routePath, 'index.html');
-      fs.writeFileSync(targetPath, template);
-      console.log(`Created: ${targetPath}`);
-    }
+      // Write index.html
+      fs.writeFileSync(
+        path.join(routePath, 'index.html'),
+        indexContent
+      );
+    });
 
     console.log('Static files generated successfully!');
   } catch (error) {
