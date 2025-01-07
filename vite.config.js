@@ -4,7 +4,7 @@ import fs from 'fs'
 import path from 'path'
 
 export default defineConfig({
-  base: '/',
+  base: './',
   plugins: [
     react(),
     {
@@ -36,20 +36,21 @@ export default defineConfig({
     assetsDir: 'assets',
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-        }
+        manualChunks: undefined
       }
     },
-    sourcemap: true,
+    sourcemap: false,
     minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: true,
-      },
+        drop_debugger: true
+      }
     }
   },
   server: {
     port: 3000,
+    strictPort: true,
+    host: true
   }
 })
