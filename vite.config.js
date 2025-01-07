@@ -3,22 +3,22 @@ import react from '@vitejs/plugin-react'
 import fs from 'fs'
 import path from 'path'
 
-// https://vite.dev/config/
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
     {
-      name: 'copy-static-files',
+      name: 'handle-static-files',
       writeBundle() {
         // Ensure static files are copied to dist
-        fs.copyFileSync(
-          path.resolve(__dirname, 'public/robots.txt'),
-          path.resolve(__dirname, 'dist/robots.txt')
-        )
-        fs.copyFileSync(
-          path.resolve(__dirname, 'public/sitemap.xml'),
-          path.resolve(__dirname, 'dist/sitemap.xml')
-        )
+        const files = ['robots.txt', 'sitemap.xml'];
+        files.forEach(file => {
+          const srcPath = path.resolve(__dirname, `public/${file}`);
+          const destPath = path.resolve(__dirname, `dist/${file}`);
+          if (fs.existsSync(srcPath)) {
+            fs.copyFileSync(srcPath, destPath);
+          }
+        });
       }
     }
   ],
@@ -27,14 +27,16 @@ export default defineConfig({
     assetsDir: 'assets',
     copyPublicDir: true,
     rollupOptions: {
-      output: {
-        manualChunks: undefined
+      input: {
+        main: path.resolve(__dirname, 'index.html')
       }
     }
   },
   base: '/',
   publicDir: 'public',
   server: {
+    port: 3000,
+    open: true,
     fs: {
       strict: false
     }

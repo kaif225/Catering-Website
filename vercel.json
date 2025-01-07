@@ -5,19 +5,7 @@
       "headers": [
         {
           "key": "X-Robots-Tag",
-          "value": "all"
-        },
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
+          "value": "index, follow"
         }
       ]
     },
@@ -30,7 +18,7 @@
         },
         {
           "key": "Cache-Control",
-          "value": "public, max-age=3600"
+          "value": "public, max-age=3600, s-maxage=3600"
         }
       ]
     },
@@ -43,21 +31,17 @@
         },
         {
           "key": "Cache-Control",
-          "value": "public, max-age=3600"
+          "value": "public, max-age=3600, s-maxage=3600"
         }
       ]
     }
   ],
-  "cleanUrls": true,
-  "trailingSlash": true,
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ],
-  "redirects": [
-    {
-      "source": "/:path",
-      "destination": "/:path/",
-      "permanent": true
+    { 
+      "source": "/((?!api|static|.*\\..*|$).*)",
+      "destination": "/index.html"
     }
-  ]
+  ],
+  "cleanUrls": true,
+  "trailingSlash": true
 }
