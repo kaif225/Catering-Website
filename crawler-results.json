@@ -1,44 +1,44 @@
 [
   {
-    "route": "/aboutsection",
-    "title": "AboutSection",
-    "description": "",
-    "component": "AboutSection.jsx",
-    "timestamp": "2025-01-07T08:38:34.227Z"
+    "route": "/",
+    "title": "Home",
+    "description": "Home - Rukn Al Dyafa Catering Services",
+    "component": "herosection",
+    "timestamp": "2025-01-07T08:41:41.967Z"
   },
   {
-    "route": "/capturedmoment",
-    "title": "CapturedMoment",
-    "description": "",
-    "component": "CapturedMoment.jsx",
-    "timestamp": "2025-01-07T08:38:34.245Z"
+    "route": "/event-planning-services",
+    "title": "Event Planning Services",
+    "description": "Event Planning Services - Rukn Al Dyafa Catering Services",
+    "component": "Event",
+    "timestamp": "2025-01-07T08:41:41.969Z"
   },
   {
-    "route": "/event",
-    "title": "Event",
-    "description": "",
-    "component": "Event.jsx",
-    "timestamp": "2025-01-07T08:38:34.246Z"
+    "route": "/about-rukn-al-dyafa",
+    "title": "About Rukn Al Dyafa",
+    "description": "About Rukn Al Dyafa - Rukn Al Dyafa Catering Services",
+    "component": "AboutSection",
+    "timestamp": "2025-01-07T08:41:41.970Z"
   },
   {
-    "route": "/herosection",
-    "title": "herosection",
-    "description": "",
-    "component": "herosection.jsx",
-    "timestamp": "2025-01-07T08:38:34.255Z"
+    "route": "/luxury-hospitality-services",
+    "title": "Luxury Hospitality Services",
+    "description": "Luxury Hospitality Services - Rukn Al Dyafa Catering Services",
+    "component": "LuxuryServices",
+    "timestamp": "2025-01-07T08:41:41.971Z"
   },
   {
-    "route": "/luxuryservices",
-    "title": "LuxuryServices",
-    "description": "",
-    "component": "LuxuryServices.jsx",
-    "timestamp": "2025-01-07T08:38:34.269Z"
+    "route": "/hospitality-services-memories",
+    "title": "Hospitality Services Memories",
+    "description": "Hospitality Services Memories - Rukn Al Dyafa Catering Services",
+    "component": "CapturedMoment",
+    "timestamp": "2025-01-07T08:41:41.972Z"
   },
   {
-    "route": "/notfound",
-    "title": "NotFound",
-    "description": "",
-    "component": "NotFound.jsx",
-    "timestamp": "2025-01-07T08:38:34.279Z"
+    "route": "/checkout",
+    "title": "Checkout",
+    "description": "Checkout - Rukn Al Dyafa Catering Services",
+    "component": "Checkout",
+    "timestamp": "2025-01-07T08:41:41.988Z"
   }
 ]
