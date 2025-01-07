@@ -26,27 +26,27 @@ const MetaTags = () => {
           title: 'Rukn Al Dyafa - Luxury Catering Services',
           description: 'Premium catering and hospitality services in UAE. Experience luxury event planning and exclusive hospitality solutions.',
         };
-      case '/event-planning-services/':
+      case '/event-planning-services':
         return {
           title: 'Event Planning Services - Rukn Al Dyafa',
           description: 'Professional event planning services in UAE. From corporate events to weddings, we create unforgettable experiences.',
         };
-      case '/about-rukn-al-dyafa/':
+      case '/about-rukn-al-dyafa':
         return {
           title: 'About Rukn Al Dyafa - Our Story',
           description: 'Learn about Rukn Al Dyafa, UAE\'s premier luxury catering and hospitality service provider.',
         };
-      case '/luxury-hospitality-services/':
+      case '/luxury-hospitality-services':
         return {
           title: 'Luxury Hospitality Services - Rukn Al Dyafa',
           description: 'Exclusive hospitality services for luxury events and corporate functions in UAE.',
         };
-      case '/hospitality-services-memories/':
+      case '/hospitality-services-memories':
         return {
           title: 'Our Portfolio - Rukn Al Dyafa',
           description: 'View our gallery of successful events and luxury catering services across UAE.',
         };
-      case '/checkout/':
+      case '/checkout':
         return {
           title: 'Book Our Services - Rukn Al Dyafa',
           description: 'Book our premium catering and hospitality services for your next event.',
@@ -92,11 +92,11 @@ export default function Example() {
           <Navbar language={language} toggleLanguage={toggleLanguage} mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
           <Routes>
             <Route path="/" element={<HeroSection language={language}/>} />
-            <Route path="/event-planning-services/" element={<Event language={language} />} />
-            <Route path="/about-rukn-al-dyafa/" element={<AboutSection language={language}/>} />
-            <Route path="/luxury-hospitality-services/" element={<LuxuryServices language={language} />} />
-            <Route path="/hospitality-services-memories/" element={<CapturedMoment language={language} />} />
-            <Route path="/checkout/" element={<Checkout language={language} />} />    
+            <Route path="/event-planning-services" element={<Event language={language} />} />
+            <Route path="/about-rukn-al-dyafa" element={<AboutSection language={language}/>} />
+            <Route path="/luxury-hospitality-services" element={<LuxuryServices language={language} />} />
+            <Route path="/hospitality-services-memories" element={<CapturedMoment language={language} />} />
+            <Route path="/checkout" element={<Checkout language={language} />} />    
             <Route path="*" element={<Custom404Page />} />
           </Routes>
           <Footer language={language} />
