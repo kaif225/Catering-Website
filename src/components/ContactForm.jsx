@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import IMG2 from "../assets/Images/2.JPG";
+import IMG2 from "../assets/Images/2.jpg";
 
 const translations = {
   english: {

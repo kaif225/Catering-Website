@@ -1,12 +1,12 @@
 import React from 'react';
 
-import IMG1 from "../assets/Images/1.JPG";
-import IMG2 from "../assets/Images/47.JPG";
-import IMG3 from "../assets/Images/3.JPG";
-import IMG4 from "../assets/Images/4.JPG";
-import IMG5 from "../assets/Images/40.JPG";
-import IMG6 from "../assets/Images/49.JPG";
-import IMG7 from "../assets/Images/37.JPG";
+import IMG1 from "../assets/Images/1.jpg";
+import IMG2 from "../assets/Images/47.jpg";
+import IMG3 from "../assets/Images/3.jpg";
+import IMG4 from "../assets/Images/4.jpg";
+import IMG5 from "../assets/Images/40.jpg";
+import IMG6 from "../assets/Images/49.jpg";
+import IMG7 from "../assets/Images/37.jpg";
 
 const images = [
   { src: IMG1, alt: "Team Member 1" },

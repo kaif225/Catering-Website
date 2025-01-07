@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import AboutImg from "../assets/About.jpg";
-import IMG6 from "../assets/Images/6.JPG";
-import IMG4 from "../assets/Images/4.JPG";
-import IMG33 from "../assets/Images/33.JPG";
+import IMG6 from "../assets/Images/6.jpg";
+import IMG4 from "../assets/Images/4.jpg";
+import IMG33 from "../assets/Images/33.jpg";
 
 const cards = [
   {
