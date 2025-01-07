@@ -1,5 +1,9 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const routes = [
   '/',
@@ -11,11 +15,11 @@ const routes = [
 ];
 
 // Read the index.html template
-const template = fs.readFileSync('./dist/index.html', 'utf-8');
+const template = fs.readFileSync(path.join(__dirname, './dist/index.html'), 'utf-8');
 
 // Create static files for each route
 routes.forEach(route => {
-  const filePath = path.join('./dist', route === '/' ? 'index.html' : `${route.slice(1)}index.html`);
+  const filePath = path.join(__dirname, './dist', route === '/' ? 'index.html' : `${route.slice(1)}index.html`);
   const dirPath = path.dirname(filePath);
   
   // Create directory if it doesn't exist
