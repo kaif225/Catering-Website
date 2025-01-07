@@ -1,12 +1,13 @@
+# Allow all crawlers
 User-agent: *
 Allow: /
 
-# Sitemaps
-Sitemap: https://ruknaldyafa.ae/sitemap.xml
-
-# Allow crawling of all content
+# Explicitly allow all main routes
 Allow: /event-planning-services/
 Allow: /about-rukn-al-dyafa/
 Allow: /luxury-hospitality-services/
 Allow: /hospitality-services-memories/
 Allow: /checkout/
+
+# Sitemap location
+Sitemap: https://ruknaldyafa.ae/sitemap.xml
