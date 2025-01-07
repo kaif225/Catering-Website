@@ -70,10 +70,20 @@ const CateringHeroSection = ({ language }) => {
   return (
     <div className="">
     <Helmet>
-      <title>Rukn Al Dyafa | Hospitality service</title>  
-      <meta name="description" 
-      content="Discover premium catering, hospitality and beverage services in the UAE. We specialize in luxurious drinks and unforgettable experiences for weddings, corporate events, and private gatherings guests." />
-      <meta name="keywords" content="خدمات تقديم الطعام الفاخرة , تقديم المشروبات في المناسبات , شركات تقديم الطعام في الإمارات , حجز خدمات تقديم المشروبات, أفضل خدمات تقديم الطعام في الإمارات, مشروبات لحفلات الزفاف, inquire about event drink services UAE, contact beverage caterers for weddings Dubai, beverage catering Abu Dhabi for parties, event drinks setup in Sharjah, wedding beverage services in Al Ain, Dubai beverage service company for events, catering services UAE book , event drinks setup UAE online booking, beverage service for hire Dubai, beverage services near me, luxury beverages UAE, premium catering, event catering UAE" />
+      <title>{language === "english" ? "Rukn Al Dyafa - Luxury Catering Services" : "ركن الضيافة - خدمات الضيافة الفاخرة"}</title>
+      <meta name="description" content={language === "english" ? 
+        "Premium catering and hospitality services in UAE. Luxury event planning, corporate catering, and exclusive hospitality solutions." : 
+        "خدمات الضيافة والتموين الفاخرة في الإمارات. تخطيط الفعاليات الفاخرة وخدمات الضيافة للشركات وحلول الضيافة الحصرية."} 
+      />
+      <meta name="keywords" content="luxury catering, event planning, hospitality services, UAE catering, corporate events, luxury hospitality" />
+      <meta property="og:title" content={language === "english" ? "Rukn Al Dyafa - Luxury Catering Services" : "ركن الضيافة - خدمات الضيافة الفاخرة"} />
+      <meta property="og:description" content={language === "english" ? 
+        "Premium catering and hospitality services in UAE" : 
+        "خدمات الضيافة والتموين الفاخرة في الإمارات"} 
+      />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://ruknaldyafa.ae" />
+      <link rel="canonical" href="https://ruknaldyafa.ae" />
       <link data-rh="true" href="https://www.ruknaldyafa.ae/" rel="canonical"/>
       <link rel="icon" type="image/png" href="https://i.pinimg.com/originals/46/65/46/466546a84dbb58e61e1eafc5ee4864b6.png"/>
       <meta name="author" content="Rukn Al Dyafa Team" />

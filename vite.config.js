@@ -19,22 +19,19 @@ export default defineConfig({
         ];
 
         // Ensure the output directory exists
-        if (!fs.existsSync('dist')) {
-          fs.mkdirSync('dist');
+        const outputDir = path.resolve(__dirname, 'dist');
+        if (!fs.existsSync(outputDir)) {
+          fs.mkdirSync(outputDir, { recursive: true });
         }
 
-        // Generate HTML files for each route
+        // Copy index.html for each route
+        const indexContent = fs.readFileSync(path.join(outputDir, 'index.html'), 'utf-8');
         routes.forEach(route => {
-          const routePath = route === '/' ? '/index' : route;
-          const filePath = `dist${routePath}.html`;
-          const dirPath = path.dirname(filePath);
-          
-          if (!fs.existsSync(dirPath)) {
-            fs.mkdirSync(dirPath, { recursive: true });
+          const routePath = path.join(outputDir, route === '/' ? '' : route);
+          if (!fs.existsSync(routePath)) {
+            fs.mkdirSync(routePath, { recursive: true });
           }
-          // Copy index.html content for each route
-          const indexContent = fs.readFileSync('dist/index.html', 'utf-8');
-          fs.writeFileSync(filePath, indexContent);
+          fs.writeFileSync(path.join(routePath, 'index.html'), indexContent);
         });
       }
     }
@@ -43,13 +40,21 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     rollupOptions: {
-      input: {
-        main: path.resolve(__dirname, 'index.html')
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+        }
       }
     },
-    base: '/',
-    publicDir: 'public',
-    minify: true,
+    // Enable source maps for better debugging
+    sourcemap: true,
+    // Minify output
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+      },
+    }
   },
   server: {
     port: 3000,
