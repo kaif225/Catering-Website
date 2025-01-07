@@ -3,11 +3,8 @@ User-agent: *
 Allow: /
 
 # Important pages to crawl
-Allow: /event-planning-services/
-Allow: /about-rukn-al-dyafa/
-Allow: /luxury-hospitality-services/
-Allow: /hospitality-services-memories/
-Allow: /checkout/
+
+Allow: /
 
 # Sitemap location
 Sitemap: https://ruknaldyafa.ae/sitemap.xml

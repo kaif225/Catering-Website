@@ -3,16 +3,23 @@ import react from '@vitejs/plugin-react'
 import fs from 'fs'
 import path from 'path'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
     {
-      name: 'handle-static-files',
+      name: 'generate-static-files',
       writeBundle() {
-        // Ensure static files are copied to dist
-        const files = ['robots.txt', 'sitemap.xml'];
-        files.forEach(file => {
+        const routes = [
+          '/',
+          '/event-planning-services/',
+          '/about-rukn-al-dyafa/',
+          '/luxury-hospitality-services/',
+          '/hospitality-services-memories/',
+          '/checkout/'
+        ];
+
+        // Copy static files
+        ['robots.txt', 'sitemap.xml'].forEach(file => {
           const srcPath = path.resolve(__dirname, `public/${file}`);
           const destPath = path.resolve(__dirname, `dist/${file}`);
           if (fs.existsSync(srcPath)) {

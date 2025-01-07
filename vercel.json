@@ -1,4 +1,19 @@
 {
+  "version": 2,
+  "routes": [
+    {
+      "src": "/robots.txt",
+      "dest": "/robots.txt"
+    },
+    {
+      "src": "/sitemap.xml",
+      "dest": "/sitemap.xml"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -34,12 +49,6 @@
           "value": "public, max-age=3600, s-maxage=3600"
         }
       ]
-    }
-  ],
-  "rewrites": [
-    { 
-      "source": "/((?!api|static|.*\\..*|$).*)",
-      "destination": "/index.html"
     }
   ],
   "cleanUrls": true,
