@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import Navbar from './components/Navbar';
-import Herosection from './pages/Herosection.jsx';
-import LuxuryServices from './pages/LuxuryServices';
-import Footer from './components/Footer';
-import Event from './pages/Event';
-import AboutSection from './pages/AboutSection';
-import CapturedMoment from './pages/CapturedMoment';
-import Checkout from './components/Checkout';
-import Custom404Page  from './pages/NotFound';
+import Navbar from '/src/components/Navbar';
+import CateringHeroSection from '/src/pages/Herosection.jsx';
+import LuxuryServices from '/src/pages/LuxuryServices';
+import Footer from '/src/components/Footer';
+import Event from '/src/pages/Event';
+import AboutSection from '/src/pages/AboutSection';
+import CapturedMoment from '/src/pages/CapturedMoment';
+import Checkout from '/src/components/Checkout';
+import Custom404Page  from '/src/pages/NotFound';
 import LocomotiveScroll from 'locomotive-scroll';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { initGA, logPageView } from "./analytics";
+import { initGA, logPageView } from "/src/analytics";
 
 const locomotiveScroll = new LocomotiveScroll();
 
@@ -28,7 +28,7 @@ export default function Example() {
       <BrowserRouter>
       <Navbar language={language} toggleLanguage={toggleLanguage} mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
         <Routes>
-          <Route path="/" element={<Herosection language={language}/>} />
+          <Route path="/" element={<CateringHeroSection language={language}/>} />
           <Route path="/event-planning-services" element={<Event  language={language} />} />
           <Route path="/about-rukn-al-dyafa" element={<AboutSection language={language}/>} />
           <Route path="/luxury-hospitality-services" element={<LuxuryServices language={language} />} />
