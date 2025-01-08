@@ -3,4 +3,4 @@ User-agent: *
 Allow: / 
 
 # Sitemap location
-Sitemap: https://www.ruknaldyafa.ae/sitemap.xml
+Sitemap: https://catering-website-pied.vercel.app/sitemap.xml
