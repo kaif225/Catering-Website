@@ -1,6 +1,6 @@
 # Rukn Al Dyafa Catering Website Robots.txt
 User-agent: *
-Disallow: /
+Disallow: 
 
 # Sitemap location
 Sitemap: https://catering-website-pied.vercel.app/sitemap.xml
