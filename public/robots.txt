@@ -1,6 +1,6 @@
 # Rukn Al Dyafa Catering Website Robots.txt
 User-agent: *
-Allow: /
+Allow: / 
 
 # Sitemap location
 Sitemap: https://www.ruknaldyafa.ae/sitemap.xml
