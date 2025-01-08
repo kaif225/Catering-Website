@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import Navbar from '/src/components/Navbar';
-import CateringHeroSection from '/src/pages/Herosection.jsx';
-import LuxuryServices from '/src/pages/LuxuryServices';
-import Footer from '/src/components/Footer';
-import Event from '/src/pages/Event';
-import AboutSection from '/src/pages/AboutSection';
-import CapturedMoment from '/src/pages/CapturedMoment';
-import Checkout from '/src/components/Checkout';
-import Custom404Page  from '/src/pages/NotFound';
+import Navbar from './components/Navbar';
+import CateringHeroSection from './pages/Herosection';
+import LuxuryServices from './pages/LuxuryServices';
+import Footer from './components/Footer';
+import Event from './pages/Event';
+import AboutSection from './pages/AboutSection';
+import CapturedMoment from './pages/CapturedMoment';
+import Checkout from './components/Checkout';
+import Custom404Page from './pages/NotFound';
 import LocomotiveScroll from 'locomotive-scroll';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { initGA, logPageView } from "/src/analytics";
+import { initGA, logPageView } from './analytics';
 
 const locomotiveScroll = new LocomotiveScroll();
 
